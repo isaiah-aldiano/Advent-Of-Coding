@@ -1,0 +1,23 @@
+package calorieCounting;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.*;
+
+public class main {
+
+	public static void main(String[] args) {
+		try {
+			URL data = new URL("https://adventofcode.com/2022/day/1/input");
+			HttpURLConnection hr = (HttpURLConnection)data.openConnection();
+			System.out.println(hr.getResponseCode());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+
+}

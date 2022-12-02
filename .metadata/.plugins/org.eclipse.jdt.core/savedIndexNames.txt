@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/Users/isaiah/Desktop/AventOfCode/.metadata/.plugins/org.eclipse.jdt.core
+3619769358.index
+1865797976.index
+409909306.index
