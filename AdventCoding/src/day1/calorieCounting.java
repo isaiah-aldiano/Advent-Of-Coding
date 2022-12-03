@@ -10,7 +10,7 @@ public class calorieCounting {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> invs = new ArrayList<Integer>();
-		int maxCals = Integer.MIN_VALUE, index = 0;
+		int maxCals = 0, index = 0;
 		try {
 			String line;
 			int temp = 0;
@@ -24,17 +24,24 @@ public class calorieCounting {
 				}
 			}
 			
-			for (int cals : invs) {
-				if (cals > maxCals) {
-					maxCals = cals;
-					index = invs.indexOf(cals);
-				}
+//			for (int cals : invs) {
+//				if (cals > maxCals) {
+//					maxCals = cals;
+//					index = invs.indexOf(cals);
+//				}
+//			}
+			invs.sort(null);
+			
+			for (int j = invs.size() - 1; j > invs.size() - 4; j--) {
+				maxCals += invs.get(j);
 			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(maxCals + " " + index);
+//		System.out.println(maxCals + " " + index);
+		System.out.println(maxCals);
 	}
 
 }
