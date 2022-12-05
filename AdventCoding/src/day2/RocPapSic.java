@@ -40,7 +40,7 @@ public class RocPapSic {
 	
 //		System.out.println(vals.get(nodeList.get(elf).getL()));
 
-		System.out.println(elf + " " + end);
+//		System.out.println(elf + " " + end);
 		
 //		switch (tempRes) {
 //		case -2:
