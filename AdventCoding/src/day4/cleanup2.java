@@ -25,9 +25,7 @@ public class cleanup2 {
 				B = Integer.parseInt(lineArray[0].substring(dash1 + 1));
 				C = Integer.parseInt(lineArray[1].substring(0, dash2));
 				D = Integer.parseInt(lineArray[1].substring(dash2 + 1));
-				
-//				System.out.println(A + " " + B + " " + C + " " + D);
-				
+								
 				for (int i = A; i <= B; i++) {
 					elf1.add(Integer.toString(i));
 				}
