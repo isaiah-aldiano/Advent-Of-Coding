@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import usefulshti.dataparser;
 
-public class disk {
+public class disk2 {
 
 	public static void main(String[] args) throws IOException {
 		dataparser input = new dataparser("/src/myDay7/files.txt");
@@ -46,19 +46,33 @@ public class disk {
 			}
 		}
 		
+		long spaceLeft = 70_000_000 - allDir.get(0).getDirSize();
+		
+		long spaceNeeded = 30_000_000 - spaceLeft;
+		
+		System.out.println(spaceNeeded);
+		
+		long temp = Integer.MAX_VALUE;
+		directory tempDir = null;
 		for (int i = 0; i < allDir.size(); i++) {
-			 HashMap<String, file> temp = allDir.get(i).getContent();
-			 for (String s : temp.keySet()) {
-				 if (temp.get(s) instanceof directory) {
-					 long temp2 = ((directory) temp.get(s)).getDirSize();
-					 System.out.println(s + " " + ((directory) temp.get(s)).getDirSize());	 
-//					 if (temp2 <= 100_000) {
-//						 sum += temp2;
-//					 }
-					 sum += temp2;
-				 }
-			 }
+			long tempDirSize = allDir.get(i).getDirSize();
+			if ( tempDirSize < temp && tempDirSize > spaceNeeded) {
+				tempDir = allDir.get(i);
+				temp = tempDir.getDirSize();
+			}
 		}
-		System.out.println(sum);
+		
+//		ArrayList<directory> tempDir = new ArrayList<directory>();
+//		
+//		for (int i = 0; i < allDir.size(); i++) {
+//			if (allDir.get(i).getDirSize() > spaceNeeded) {
+//				System.out.println(allDir.get(i).getName() + " " + allDir.get(i).getDirSize());
+//				tempDir.add(allDir.get(i));
+//			}
+//		}
+		
+		
+		
+		System.out.println(tempDir.getDirSize());
 	}
 }
